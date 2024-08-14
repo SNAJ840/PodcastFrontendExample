@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+
+    <main class="main-body">
+        <section class="title-section podcast-header">
+            <div class="podcast-header-image">
+                <img src="{{ podcast.image }}" />
+            </div>
+            <div class="podcast-header-text">
+                <p class="podcast-type">Podcast</p>
+                <div>
+                    <h1 class="title-header">{{ podcast.title }}</h1>
+                </div>
+                <h2 class="subtitle-header">© snaj840</h2>
+            </div>
+
+        </section>
+
+        <section class="podcast-main-page">
+            <section class="podcast-episodes">
+
+                <div class="episode-container">
+                    <div class="episode-card-image">
+                        <img src="{{ podcast.image }}" />
+                    </div>
+                    <div class="episode-card-text">
+                        <h1 class="episode-title">The Tuesday Spot Feat</h1>
+                        <p class="episode-podcast">D-Hour Radio Network</p>
+                        <p class="episode-description">Its the Tuesday Spot on the D-Hour Radio Network and on this show
+                            as always we will be bringing you all the hits from your favorite celebrity, new, amateur,
+                            unknown, and up and coming (R&B, Hip Hop, Pop, Rock, and Neo-Soul) artists!</p>
+                        <div class="episode-information">
+                            <p>Dec 2020</p>
+                            *
+                            <p>45 min 8 sec</p>
+                        </div>
+                    </div>
+
+            </section>
+            <section class="podcast-description">
+                <div class="podcast-description-text">
+                    <h3>Author</h3>
+                    <p>{{ podcast.author }}</p>
+
+                    <h3>Genre</h3>
+                    <p>{{ podcast.categories }}</p>
+
+                    <h3>Description</h3>
+                    <p>
+                        {% if podcast.description | length > 250 %}
+                        {{ podcast.description[:250] }}
+                        {% else %}
+                        {{ podcast.description }}
+                        {% endif %}
+                    </p>
+                    <span class="show-more">... Show More</span>
+
+
+                </div>
+            </section>
+
+        </section>
+    </main>
+</body>
+
+</html>

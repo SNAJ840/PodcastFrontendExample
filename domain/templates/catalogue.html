@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+
+    <main class="main-body">
+        <section class="title-section">
+            <h1 class="title-header">Podcast Catalogue</h1>
+            <h2 class="subtitle-header">© snaj840</h2>
+        </section>
+        <section class="catalogue-podcasts-grid">
+            {% for podcast in podcasts %}
+            <a class="catalogue-podcast" href="{{ url_for('podcast_page', podcast_id=podcast.id) }}">
+                <div class="catalogue-podcast-image">
+                    <img src="{{ podcast.image }}"/>
+                </div>
+                <div class="catalogue-podcast-description">
+                    <h3>{{ podcast.title }}</h3>
+                    <p>
+                        {% if podcast.description | length > 70 %}
+                            {{ podcast.description[:70] }}...
+                        {% else %}
+                            {{ podcast.description }}
+                        {% endif %}
+                    </p>
+                </div>
+            </a>
+            {% endfor %}
+        </section>
+        
+    </main>
+</body>
+
+</html>

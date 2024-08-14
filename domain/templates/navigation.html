@@ -1,0 +1,21 @@
+<nav class="sidebar">
+    <div class="sidebar-content">
+
+        <div class="sidebar-logo">
+            <img src="../static/images/logo.webp" />
+        </div>
+
+        <ul>
+            <li {% if request.path==url_for('home_bp.home') %} data-active="true" {% endif %}>
+                <a href="{{ url_for('home_bp.home') }}">Home</a>
+            </li>
+            <li {% if request.path==url_for('catalogue') %} data-active="true" {% endif %}>
+                <a href="{{ url_for('catalogue') }}">Catalogue</a>
+            </li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <p>© snaj840</p>
+        </div>
+    </div>
+</nav>

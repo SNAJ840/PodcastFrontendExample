@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body>
+    {% include 'navigation.html' %}
+
+    <main class="main-body center-body">
+        <section class="title-section">
+            <h1 class="title-header">CS235 Podcast Library</h1>
+            <h2 class="subtitle-header">© snaj840</h2>
+        </section>
+
+        <section class="layout-search-bar">
+            <form class="search-form">
+                <label>
+                    <input type="search" class="search-field" placeholder="Search a podcast..." value="" />
+                </label>
+                <input type="submit" class="search-submit" value="Search" />
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
